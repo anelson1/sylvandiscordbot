@@ -1,4 +1,5 @@
 import discord 
+import os
 
 bot = discord.Client()
 
@@ -11,4 +12,4 @@ async def on_message(message):
         await message.channel.send("Hello World!")
     if "!echo" in message.content.lower():
         await message.channel.send(message.content[6::])
-bot.run('ODM1NTQwNDI1ODg4MzY2NjAz.YIQ7qQ.LlOuMyE21gQIEZ4EV6-fzTEB3C8')
+bot.run(os.environ['bot_key'])
