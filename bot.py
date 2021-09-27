@@ -10,6 +10,8 @@ async def on_ready():
     print("Bot is ready")
 @bot.event
 async def on_message(message):
+    if message.content.lower() == "!ping":
+        await message.channel.send("@"+message.author)
     if message.content.lower() == "!hello":
         await message.channel.send("Hello World!")
     if message.content.lower()[0:6] == "!echo ":
